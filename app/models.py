@@ -1,3 +1,4 @@
+
 from . import db
 from . import login_manager
 from flask_login import UserMixin
@@ -68,3 +69,10 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
+
+class PostLike(db.Model,UserMixin):
+    __tablename__ = 'post_like'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    comment_id = db.Column(db.Integer, db.ForeignKey('comment.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))

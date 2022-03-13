@@ -2,6 +2,8 @@ from flask_sqlalchemy import SQLAlchemy
 from . import bootstrap
 from flask_login import LoginManager
 from .auth import auth as auth_blueprint
+from . import views,forms
+
 
 bootstrap = Bootstrap()
 db = SQLAlchemy()

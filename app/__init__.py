@@ -1,3 +1,5 @@
+from flask import Flask
+from app import db
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
@@ -5,7 +7,10 @@ from .auth import auth as auth_blueprint
 from . import views,forms
 from flask_uploads import UploadSet,configure_uploads,IMAGES
 from flask_mail import Mail
+from flask_simplemde import SimpleMDE
 
+
+simple = SimpleMDE()
 mail = Mail()
 photos = UploadSet('photos',IMAGES)
 bootstrap = Bootstrap()
@@ -22,6 +27,7 @@ def create_app(config_name):
       # configure UploadSet
     configure_uploads(app,photos)
     mail.init_app(app)
+    simple.init_app(app)
 
 
     # ....

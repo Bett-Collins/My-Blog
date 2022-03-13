@@ -2,6 +2,8 @@ from flask import render_template,request,redirect,url_for,abort
 from ..models import Reviews, User
 from .forms import ReviewForm,UpdateProfile
 from .. import db,photos
+import markdown2  
+from flask import current_app as app
 
 #....
 @main.route('/user/<uname>/update/pic',methods= ['POST'])

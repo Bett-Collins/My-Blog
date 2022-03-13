@@ -2,7 +2,7 @@ class Config:
     '''
     General configuration parent class
     '''
-
+UPLOADED_PHOTOS_DEST ='app/static/photos'
 
 
 

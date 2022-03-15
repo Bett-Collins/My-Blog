@@ -149,3 +149,4 @@ def delete_post(post_id):
     flash("Your post has been deleted",'success')
     return redirect(url_for('.home'))
  
+

@@ -1,14 +1,13 @@
 from app import app
 import urllib.request,json
-
+from .models import Quotes
 
 
 base_url = None
 
 def configure_request(app):
     global base_url
-    # base_url = app.config["QUOTES_API_BASE_URL"]
-QUOTES_API_BASE_URL ='http://quotes.stormconsultancy.co.uk/random.json'
+    base_url = app.config["QUOTES_API_BASE_URL"]
 
 
 def get_quotes():
@@ -32,3 +31,9 @@ def get_quotes():
 
         
      
+
+  
+       
+    
+    
+

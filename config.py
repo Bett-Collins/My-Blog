@@ -9,7 +9,12 @@ class Config:
     SECRET_KEY = '123456'
     SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:2020@localhost/blogs'
     QUOTES_API_BASE_URL ='http://quotes.stormconsultancy.co.uk/random.json'
-
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_USE_SSL = False
+    MAIL_USERNAME = 'arapbett@gmail.com'
+    MAIL_PASSWORD = '2020'
 
 
 class ProdConfig(Config):

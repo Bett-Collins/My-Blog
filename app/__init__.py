@@ -2,7 +2,7 @@ from flask import Flask, app
 from config import config_options,DevConfig
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-
+import os
 
 
 db = SQLAlchemy()
@@ -28,11 +28,13 @@ def create_app(config_name):
     configure_request(app)
     
     
+    
      # Registering the blueprint
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
     
-     
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
    
 
     

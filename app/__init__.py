@@ -34,7 +34,7 @@ def create_app(config_name):
     app.register_blueprint(main_blueprint)
     
     app.config["SECRET_KEY"] = "123456"
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL').replace('postgres://', 'postgresql://')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
    
 

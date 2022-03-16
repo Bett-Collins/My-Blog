@@ -8,7 +8,7 @@ class Config:
     General configuration parent class
     '''
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:2020@localhost/moringa'
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:2020@localhost/blog2'
     QUOTES_API_BASE_URL ='http://quotes.stormconsultancy.co.uk/random.json'
 
 
@@ -34,7 +34,7 @@ class DevConfig(Config):
         Config: The parent configuration class with General configuration settings
     '''
 
-    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:2020@localhost/moringa'
+    SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:2020@localhost/blog2'
 
 
     DEBUG = True
